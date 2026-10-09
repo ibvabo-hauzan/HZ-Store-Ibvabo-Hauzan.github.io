@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZ-store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top" id="navbar">
+        <div class="container-fluid">
+            <a href="easter-egg.html" class="navbar-brand text-primary fs-6"><span class="fw-bold text-dark fs-3">HZ</span> Store <span class="text-dark fs-4"><i class="bi bi-laptop"></i></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#store">Store</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#FAQ">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="d-flex gap-1">
+                <button class="btn btn-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas"><i class="bi bi-cart-fill"></i><span class="top-0 start-100 translate-middle position-absolute badge bg-danger">3</span></button>
+                <button class="btn btn-light"><i class="bi bi-search"></i></button>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-fill"></i> login</button>
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="bi bi-person-fill"></i> register</button>
+            </div>
+        </div>
+    </nav>
+    <div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+        <header class="container py-5" id="home">
+            <div class="row">
+                <div class="col-12 col-lg-10">
+                    <span class="badge text-bg-primary">Home</span>
+                    <h1 class="fw-bold">Welcome to HZ store</h1>
+                    <p class="text-secondary lead">Buy merchs made by your favorite youtuber, <span class="fw-normal text-info">Ibvabo</span>. These merchandise are gonna make you think it is <span class="fw-normal text-success">worth the money</span> for. These merch can be <span class="fw-normal text-danger">shirts, pants, accesories, and even toys</span>. Getting these is as simple as pressing a <span class="fw-normal text-bg-primary rounded-2 p-1">button</span> and it will be delivered to your location. If there is something wrong, you can report throught this website.</p>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <img src="images/Ibvabo-pfp.jpg" alt="" class="mx-auto rounded-5" width="100%">
+                </div>
+            </div>
+        </header>
+        <main class="container py-5 text-center" id="store">
+            <span class="badge text-bg-danger">Store</span>
+            <h2 class="fw-bold">Our store</h2>
+            <p class="text-secondary lead">We have a variety of things to sell.</p>
+            <div class="row text-start row-gap-4">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <div class="card">
+                        <img src="images/shirts.png" alt="shirt" class="card-img-top" height="250px">
+                        <div class="card-body">
+                            <h4 class="">Shirts</h4>
+                            <p class="text-secondary lead">Tshirts, sweaters, etc.</p>
+                            <a href="#shirtModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shirtModal"><i class="bi bi-search"></i> Search</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-md-6">
+                    <div class="card">
+                        <img src="images/pants.png" alt="pant" class="card-img-top" height="250px">
+                        <div class="card-body">
+                            <h4 class="">Pants</h4>
+                            <p class="text-secondary lead">Sweatpants, jeans, etc.</p>
+                            <a href="#pantModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pantModal"><i class="bi bi-search"></i> Search</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-md-6">
+                    <div class="card">
+                        <img src="images/hats.png" alt="hat" class="card-img-top" height="250px">
+                        <div class="card-body">
+                            <h4 class="">Hats</h4>
+                            <p class="text-secondary lead">Caps, beanie, etc.</p>
+                            <a href="#hatModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hatModal"><i class="bi bi-search"></i> Search</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-md-6">
+                    <div class="card">
+                        <img src="images/accessories.png" alt="accessories" class="card-img-top" height="250px">
+                        <div class="card-body">
+                            <h4 class="">Accessories</h4>
+                            <p class="text-secondary lead">Badges, necklaces, etc.</p>
+                            <a href="#accessoryModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#accessoryModal"><i class="bi bi-search"></i> Search</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-md-6">
+                    <div class="card">
+                        <img src="images/books.png" alt="book" class="card-img-top" height="250px">
+                        <div class="card-body">
+                            <h4 class="">Books</h4>
+                            <p class="text-secondary lead">Actions, Educations, etc.</p>
+                            <a href="#bookModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookModal"><i class="bi bi-search"></i> Search</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-md-6">
+                    <div class="card">
+                        <img src="images/toys.png" alt="toy" class="card-img-top" height="250px">
+                        <div class="card-body">
+                            <h4 class="">Toys</h4>
+                            <p class="text-secondary lead">Mystery box, figurines, etc.</p>
+                            <a href="#toyModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#toyModal"><i class="bi bi-search"></i> Search</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <section class="container py-5" id="about">
+            <div class="row">
+                <div class="col-12 col-lg-9">
+                    <span class="badge text-bg-success">about</span>
+                    <h2 class="fw-bold">About Ibvabo HZ</h2>
+                    <p class="text-secondary lead">I'm a Youtuber well-known for programming and pro-gaming. I got my love of programming since i was 13 years old and continued learning it. I have many projects made, the example is this website but i also create games. Please try the game it's called <span><a href="https://scratch.mit.edu/projects/1144782164">Cuby's Course</a></span>.</p>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/images/accessories.png" class="d-block w-100 rounded-5" alt="" height="200px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/books.png" class="d-block w-100 rounded-5" alt="" height="200px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/hats.png" class="d-block w-100 rounded-5" alt="" height="200px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/pants.png" class="d-block w-100 rounded-5" alt="" height="200px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/shirts.png" class="d-block w-100 rounded-5" alt="" height="200px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/toys.png" class="d-block w-100 rounded-5" alt="" height="200px">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container py-5" id="FAQ">
+            <div class="text-center">
+                <span class="badge text-bg-info">FAQ</span>
+                <h2 class="fw-bold">Frequently Asked Questions</h2>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">How do the packages get delivered?</button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>We have our own trucks to deliver it.</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Is this international?</button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>It is only in Indo, and Australia.</strong> We will go for more countries (next is America).
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Is this only online or is there a seperate store?</button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>It is only online (sadly).</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="py-5 bg-body-tertiary shadow-sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4 col-lg-3">
+                            <h2 class="fw-bold">Contacts</h2>
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                <a href="https://www.youtube.com/@Ibvabo-hauzan" class="btn btn-danger" target="_blank">Youtube</a>
+                                <a href="https://scratch.mit.edu/projects/1144782164" class="btn btn-warning" target="_blank">Scratch</a>
+                                <a href="" class="btn btn-primary" target="_blank">Instagram</a>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-6">
+                            <h4 class="fw-bold">This is all there is. Give us your thought on more things to add to our store.</h4>
+                        </div>
+                        <div class="col-4 col-lg-3 text-end">
+                            <h2 class="fw-bold">Extras</h2>
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                <a href="https://www.youtube.com/@Ibvabo-hauzan" class="btn btn-danger" target="_blank">Report</a>
+                                <a href="https://scratch.mit.edu/projects/1144782164" class="btn btn-warning" target="_blank">Review</a>
+                                <a href="" class="btn btn-primary" target="_blank">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-dark py-1 mt-5 position-absolute top-100% start-0 end-0">
+                    <p class="text-secondary text-center">end of website---Ibvabo-Hauzan</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- ====offcanvascart==== -->
+    <div class="offcanvas offcanvas-end" id="cartCanvas" tabIndex="-1">
+        <div class="offcanvas-header">
+            <div class="offcanvas-title fw-bold" id="offcanvasLabel"> <i class="bi bi-cart-fill"></i> Shopping Cart</div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex gap-3">
+                <img src="/images/shirts.png" alt="" class="object-fit-cover" width="70" height="70">
+                <div class="flex-grow-1">
+                    <h6>Tshirt</h6>
+                    <small class="text-secondary">Rp. 120.000</small>
+                    <div class="d-flex gap-2 align-items-center">
+                        <button class="btn btn-sm btn-outline-secondary">-</button>
+                        <span>1</span>
+                        <button class="btn btn-sm btn-outline-secondary">+</button>
+                    </div>
+                </div>
+                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+            </div>
+            <hr>
+            <div class="d-flex gap-3">
+                <img src="/images/pants.png" alt="" class="object-fit-cover" width="70" height="70">
+                <div class="flex-grow-1">
+                    <h6>Jeans</h6>
+                    <small class="text-secondary">Rp. 100.000</small>
+                    <div class="d-flex gap-2 align-items-center">
+                        <button class="btn btn-sm btn-outline-secondary">-</button>
+                        <span>1</span>
+                        <button class="btn btn-sm btn-outline-secondary">+</button>
+                    </div>
+                </div>
+                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+            </div>
+            <hr>
+            <div class="d-flex gap-3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPQVfigZ9YmaDXALq75TTS6Sayo0uaN_i6GlrSy85UYw&s=10" alt="" class="object-fit-cover" width="70" height="70">
+                <div class="flex-grow-1">
+                    <h6>Mystery Box</h6>
+                    <small class="text-secondary">Rp. 25.000</small>
+                    <div class="d-flex gap-2 align-items-center">
+                        <button class="btn btn-sm btn-outline-secondary">-</button>
+                        <span>1</span>
+                        <button class="btn btn-sm btn-outline-secondary">+</button>
+                    </div>
+                </div>
+                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between">
+                <span>Subtotal:</span>
+                <strong>Rp. 245.000</strong>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span>Delivery Fee:</span>
+                <strong>Rp. 20.000</strong>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span>Total:</span>
+                <strong>Rp. 265.000</strong>
+            </div>
+            <button class="btn btn-success w-100 btn-lg"><i class="bi bi-credit-card-fill"></i> Checkout</button>
+        </div>
+    </div>
+
+    <!-- Modals for Login and Register-->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex flex-column row-gap-3">
+                    <div class="d-flex flex-column">
+                        <label class="fw-bold">Username</label>
+                        <input type="text">
+                    </div>
+                    <div class="d-flex flex-column">
+                        <label class="fw-bold">Password</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Login <i class="bi bi-person-fill"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="registerModalLabel">Register</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex flex-column row-gap-3">
+                    <div class="d-flex flex-column">
+                        <label class="fw-bold">Username</label>
+                        <input type="text">
+                    </div>
+                    <div class="d-flex flex-column">
+                        <label class="fw-bold">Password</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Create <i class="bi bi-person-fill"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for store -->
+    <div class="modal fade" id="shirtModal" tabindex="-1" aria-labelledby="shirtModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/shirts.png" alt="" width="100%">
+                    <h1 class="modal-title fs-5" id="shirtModalLabel">Shirts</h1>
+                    <p class="text-secondary lead">Mystery box, figurines, etc</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Purchase <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="pantModal" tabindex="-1" aria-labelledby="pantModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/pants.png" alt="" width="100%">
+                    <h1 class="modal-title fs-5" id="pantModalLabel">Pants</h1>
+                    <p class="text-secondary lead">Mystery box, figurines, etc</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Purchase <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="hatModal" tabindex="-1" aria-labelledby="hatModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/hats.png" alt="" width="100%">
+                    <h1 class="modal-title fs-5" id="hatModalLabel">Hats</h1>
+                    <p class="text-secondary lead">Mystery box, figurines, etc</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Purchase <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="accessoryModal" tabindex="-1" aria-labelledby="accessoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/accessories.png" alt="" width="100%">
+                    <h1 class="modal-title fs-5" id="accesoryModalLabel">Accessories</h1>
+                    <p class="text-secondary lead">Mystery box, figurines, etc</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Purchase <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/books.png" alt="" width="100%">
+                    <h1 class="modal-title fs-5" id="bookModalLabel">Books</h1>
+                    <p class="text-secondary lead">Mystery box, figurines, etc</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Purchase <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="toyModal" tabindex="-1" aria-labelledby="toyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/toys.png" alt="" width="100%">
+                    <h1 class="modal-title fs-5" id="toyModalLabel">Toys</h1>
+                    <p class="text-secondary lead">Mystery box, figurines, etc</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Purchase <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
